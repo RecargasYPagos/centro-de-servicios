@@ -1,155 +1,177 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recargas y Pagos</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{
-      box-sizing:border-box;
-      font-family:Arial,sans-serif;
-    }
+<title>Recargas y Pagos</title>
 
-    body{
-      margin:0;
-      background:#f5f5f5;
-      color:#333;
-    }
+<style>
 
-    .container{
-      max-width:700px;
-      margin:auto;
-      padding:20px;
-    }
+*{
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
 
-    .header{
-      text-align:center;
-      margin-bottom:25px;
-    }
+body{
+  margin:0;
+  background:#f5f5f5;
+  color:#333;
+}
 
-    .header h1{
-      color:#0a7f39;
-      margin-bottom:10px;
-    }
+.container{
+  max-width:700px;
+  margin:auto;
+  padding:20px;
+}
 
-    .subtitle{
-      color:#666;
-      font-size:16px;
-    }
+.header{
+  text-align:center;
+  margin-bottom:25px;
+}
 
-    .card{
-      background:#fff;
-      border-radius:15px;
-      padding:20px;
-      margin-bottom:20px;
-      box-shadow:0 2px 8px rgba(0,0,0,.08);
-    }
+.header h1{
+  color:#0a7f39;
+  margin-bottom:10px;
+  font-size:42px;
+}
 
-    .card h2{
-      margin-top:0;
-      color:#0a7f39;
-      font-size:22px;
-    }
+.subtitle{
+  color:#666;
+  font-size:18px;
+}
 
-    .description{
-      background:#f0fdf4;
-      border-left:4px solid #0a7f39;
-      padding:12px;
-      border-radius:8px;
-      margin:15px 0;
-      color:#444;
-    }
+.aviso{
+  background:#fff8e1;
+  border:1px solid #ffe082;
+  border-left:5px solid #f9a825;
+  color:#5f4b00;
+  padding:16px;
+  border-radius:12px;
+  margin:20px 0;
+  position:relative;
+  line-height:1.6;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
 
-    .limits{
-      color:#666;
-      margin-bottom:15px;
-      line-height:1.6;
-    }
+.cerrar-aviso{
+  position:absolute;
+  top:10px;
+  right:12px;
+  border:none;
+  background:none;
+  font-size:20px;
+  color:#777;
+  cursor:pointer;
+  width:auto;
+  padding:0;
+}
 
-    input{
-      width:100%;
-      padding:14px;
-      border:1px solid #ddd;
-      border-radius:10px;
-      font-size:16px;
-      margin-bottom:15px;
-    }
+.card{
+  background:#fff;
+  border-radius:15px;
+  padding:20px;
+  margin-bottom:20px;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
 
-    button{
-      width:100%;
-      border:none;
-      border-radius:10px;
-      padding:15px;
-      font-size:16px;
-      cursor:pointer;
-      font-weight:bold;
-      margin-bottom:10px;
-    }
+.card h2{
+  color:#0a7f39;
+  margin-top:0;
+}
 
-    .btn-calculate{
-      background:#0a7f39;
-      color:#fff;
-    }
+.description{
+  background:#f0fdf4;
+  border-left:5px solid #0a7f39;
+  padding:14px;
+  border-radius:10px;
+  margin:15px 0;
+  line-height:1.5;
+}
 
-    .btn-whatsapp{
-      background:#25D366;
-      color:#fff;
-      text-decoration:none;
-      display:block;
-      text-align:center;
-      padding:15px;
-      border-radius:10px;
-      font-weight:bold;
-      margin-top:15px;
-    }
+.limits{
+  color:#666;
+  margin-bottom:15px;
+  font-size:18px;
+}
 
-    .result{
-      margin-top:15px;
-      font-size:20px;
-      font-weight:bold;
-      text-align:center;
-      color:#0a7f39;
-    }
+input{
+  width:100%;
+  padding:15px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  font-size:18px;
+  margin-bottom:15px;
+}
 
-    .footer-services{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:12px;
-      margin-top:20px;
-    }
+button{
+  width:100%;
+  background:#0a7f39;
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  padding:15px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    .service-btn{
-      background:#fff;
-      border:1px solid #ddd;
-      border-radius:12px;
-      padding:15px;
-      text-align:center;
-      text-decoration:none;
-      color:#333;
-      font-weight:bold;
-      box-shadow:0 2px 8px rgba(0,0,0,.05);
-    }
+.result{
+  margin-top:18px;
+  font-size:20px;
+  font-weight:bold;
+  text-align:center;
+}
 
-    .general-btn{
-      display:block;
-      background:#0a7f39;
-      color:#fff;
-      text-decoration:none;
-      text-align:center;
-      padding:16px;
-      border-radius:12px;
-      font-weight:bold;
-      margin-top:25px;
-    }
+.btn-whatsapp{
+  display:block;
+  margin-top:15px;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  text-align:center;
+  padding:15px;
+  border-radius:10px;
+  font-weight:bold;
+}
 
-    .note{
-      font-size:14px;
-      color:#777;
-      margin-top:10px;
-      text-align:center;
-    }
-  </style>
+.footer-services{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.service-btn{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:12px;
+  padding:15px;
+  text-decoration:none;
+  color:#333;
+  text-align:center;
+  font-weight:bold;
+}
+
+.general-btn{
+  display:block;
+  text-align:center;
+  background:#0a7f39;
+  color:#fff;
+  text-decoration:none;
+  padding:18px;
+  border-radius:12px;
+  font-weight:bold;
+  margin-top:20px;
+}
+
+.note{
+  text-align:center;
+  color:#666;
+  margin-top:15px;
+  font-size:14px;
+}
+
+</style>
 </head>
 
 <body>
@@ -157,8 +179,29 @@
 <div class="container">
 
   <div class="header">
+
     <h1>📱 Recargas y Pagos</h1>
-    <div class="subtitle">¿Qué servicio necesitas?</div>
+
+    <div class="subtitle">
+      ¿Qué servicio necesitas?
+    </div>
+
+    <div id="aviso" class="aviso" style="display:none;">
+
+      <button class="cerrar-aviso" onclick="cerrarAviso()">✕</button>
+
+      <strong>📢 ¡Comisiones actualizadas!</strong>
+
+      <br><br>
+
+      Hemos realizado ajustes en nuestras comisiones para seguir ofreciendo un servicio rápido y seguro.
+
+      <br><br>
+
+      💡 Consulta tu comisión al instante utilizando nuestras calculadoras.
+
+    </div>
+
   </div>
 
   <div class="card">
@@ -175,14 +218,14 @@
 
     <input type="number" id="efectivo" placeholder="Monto de retiro en efectivo">
 
-    <button class="btn-calculate" onclick="calcularEfectivo()">
+    <button onclick="calcularEfectivo()">
       🧮 Calcular comisión
     </button>
 
     <div id="resultadoEfectivo" class="result"></div>
 
     <a id="waEfectivo" class="btn-whatsapp" style="display:none;" target="_blank">
-      📲 Consultar disponibilidad por WhatsApp
+      📲 Consultar por WhatsApp
     </a>
 
   </div>
@@ -201,14 +244,14 @@
 
     <input type="number" id="transferencia" placeholder="Monto a transferir">
 
-    <button class="btn-calculate" onclick="calcularTransferencia()">
+    <button onclick="calcularTransferencia()">
       🧮 Calcular comisión
     </button>
 
     <div id="resultadoTransferencia" class="result"></div>
 
     <a id="waTransferencia" class="btn-whatsapp" style="display:none;" target="_blank">
-      📲 Solicitar transferencia por WhatsApp
+      📲 Solicitar transferencia
     </a>
 
   </div>
@@ -225,12 +268,12 @@
       </a>
 
       <a class="service-btn"
-      href="https://wa.me/529611932371?text=Hola,%20quiero%20realizar%20un%20pago%20de%20servicio%20de%20__________.">
+      href="https://wa.me/529611932371?text=Hola,%20quiero%20realizar%20un%20pago%20de%20servicio.">
         📺 Pago de servicios
       </a>
 
       <a class="service-btn"
-      href="https://wa.me/529611932371?text=Hola,%20necesito%20un%20acta%20de%20nacimiento%20actualizada%20en%20PDF.">
+      href="https://wa.me/529611932371?text=Hola,%20necesito%20un%20acta%20de%20nacimiento%20actualizada.">
         📄 Acta de nacimiento
       </a>
 
@@ -242,7 +285,7 @@
     </div>
 
     <div class="note">
-      Si deseas tu acta impresa, indícalo en tu mensaje. El costo de impresión se cotiza por separado.
+      Si deseas tu acta impresa, indícalo en tu mensaje.
     </div>
 
   </div>
@@ -250,16 +293,74 @@
   <a class="general-btn"
      href="https://wa.me/529611932371"
      target="_blank">
-    📲 Contactar por WhatsApp
+
+     📲 Contactar por WhatsApp
+
   </a>
 
 </div>
 
 <script>
 
+/* CONFIGURACIÓN RÁPIDA */
+
+const EFECTIVO_DISPONIBLE = true;
+const MONTO_MAXIMO_EFECTIVO = 4900;
+
+const TRANSFERENCIA_DISPONIBLE = true;
+const MONTO_MAXIMO_TRANSFERENCIA = 3000;
+
+/* AVISO */
+
+window.onload = function(){
+
+  if(!localStorage.getItem("avisoComisionesV1")){
+
+    document.getElementById("aviso").style.display = "block";
+
+    setTimeout(function(){
+      cerrarAviso();
+    }, 8000);
+
+  }
+
+};
+
+function cerrarAviso(){
+
+  document.getElementById("aviso").style.display = "none";
+
+  localStorage.setItem("avisoComisionesV1","visto");
+
+}
+
+/* EFECTIVO */
+
 function calcularEfectivo(){
 
-  let monto = parseInt(document.getElementById("efectivo").value);
+  const monto = parseInt(document.getElementById("efectivo").value);
+
+  const resultado = document.getElementById("resultadoEfectivo");
+
+  const whatsapp = document.getElementById("waEfectivo");
+
+  whatsapp.style.display = "none";
+
+  if(!EFECTIVO_DISPONIBLE){
+
+    resultado.innerHTML = "⚠️ En este momento no hay efectivo disponible.";
+
+    return;
+  }
+
+  if(monto > MONTO_MAXIMO_EFECTIVO){
+
+    resultado.innerHTML =
+      "⚠️ Solo hay $" + MONTO_MAXIMO_EFECTIVO.toLocaleString() + " disponibles.";
+
+    return;
+  }
+
   let comision = 0;
 
   if(monto >= 30 && monto <= 599) comision = 10;
@@ -270,28 +371,53 @@ function calcularEfectivo(){
   else if(monto >= 3900 && monto <= 4899) comision = 50;
   else if(monto == 4900) comision = 60;
   else{
-    document.getElementById("resultadoEfectivo").innerHTML =
-    "⚠️ Consultar disponibilidad por WhatsApp";
-    document.getElementById("waEfectivo").style.display = "block";
+
+    resultado.innerHTML = "⚠️ Ingresa un monto válido.";
+
     return;
   }
 
-  document.getElementById("resultadoEfectivo").innerHTML =
-  "💰 Comisión a pagar: $" + comision;
+  resultado.innerHTML = "💰 Comisión: $" + comision;
 
-  let mensaje = encodeURIComponent(
-    `Hola, necesito $${monto} en efectivo. La calculadora me indicó una comisión de $${comision}. ¿Hay disponibilidad?`
+  const mensaje = encodeURIComponent(
+    "Hola, necesito $" + monto +
+    " en efectivo. La calculadora me indicó una comisión de $" +
+    comision + "."
   );
 
-  let enlace = "https://wa.me/529611932371?text=" + mensaje;
+  whatsapp.href = "https://wa.me/529611932371?text=" + mensaje;
 
-  document.getElementById("waEfectivo").href = enlace;
-  document.getElementById("waEfectivo").style.display = "block";
+  whatsapp.style.display = "block";
 }
+
+/* TRANSFERENCIA */
 
 function calcularTransferencia(){
 
-  let monto = parseInt(document.getElementById("transferencia").value);
+  const monto = parseInt(document.getElementById("transferencia").value);
+
+  const resultado = document.getElementById("resultadoTransferencia");
+
+  const whatsapp = document.getElementById("waTransferencia");
+
+  whatsapp.style.display = "none";
+
+  if(!TRANSFERENCIA_DISPONIBLE){
+
+    resultado.innerHTML = "⚠️ En este momento no hay transferencias disponibles.";
+
+    return;
+  }
+
+  if(monto > MONTO_MAXIMO_TRANSFERENCIA){
+
+    resultado.innerHTML =
+      "⚠️ Solo puedo transferir hasta $" +
+      MONTO_MAXIMO_TRANSFERENCIA.toLocaleString();
+
+    return;
+  }
+
   let comision = 0;
 
   if(monto >= 10 && monto <= 29) comision = 5;
@@ -300,23 +426,23 @@ function calcularTransferencia(){
   else if(monto >= 1900 && monto <= 2899) comision = 20;
   else if(monto >= 2900 && monto <= 3000) comision = 30;
   else{
-    document.getElementById("resultadoTransferencia").innerHTML =
-    "⚠️ Consultar disponibilidad por WhatsApp";
-    document.getElementById("waTransferencia").style.display = "block";
+
+    resultado.innerHTML = "⚠️ Ingresa un monto válido.";
+
     return;
   }
 
-  document.getElementById("resultadoTransferencia").innerHTML =
-  "💰 Comisión a pagar: $" + comision;
+  resultado.innerHTML = "💰 Comisión: $" + comision;
 
-  let mensaje = encodeURIComponent(
-    `Hola, quiero realizar una transferencia de $${monto}. La calculadora me indicó una comisión de $${comision}. ¿Está disponible el servicio?`
+  const mensaje = encodeURIComponent(
+    "Hola, quiero realizar una transferencia de $" +
+    monto + ". La calculadora me indicó una comisión de $" +
+    comision + "."
   );
 
-  let enlace = "https://wa.me/529611932371?text=" + mensaje;
+  whatsapp.href = "https://wa.me/529611932371?text=" + mensaje;
 
-  document.getElementById("waTransferencia").href = enlace;
-  document.getElementById("waTransferencia").style.display = "block";
+  whatsapp.style.display = "block";
 }
 
 </script>
