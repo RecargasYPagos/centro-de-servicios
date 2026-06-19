@@ -371,8 +371,9 @@ function calcularEfectivo(){
 
   let comision = 0;
 
-  if(monto >= 30 && monto <= 599) comision = 10;
-  else if(monto >= 600 && monto <= 1450) comision = 20;
+  if(monto >= 20 && monto <= 599) comision = 10;
+  else if(monto >= 600 && monto <= 950) comision = 15;
+  else if(monto >= 951 && monto <= 1450) comision = 20;
   else if(monto >= 1451 && monto <= 1899) comision = 30;
   else if(monto >= 1900 && monto <= 2799) comision = 35;
   else if(monto >= 2800 && monto <= 3899) comision = 45;
